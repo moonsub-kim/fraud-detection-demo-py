@@ -1,0 +1,15 @@
+version: "2.2"
+services:
+  flink-shell:
+    build:
+      context: ./flink-job-py
+    # entrypoint: bash
+    entrypoint: bin/standalone-job.sh start-foreground  -D jobmanager.rpc.address=flink-master  -D parallelism.default=2  --pyFiles src/  --pyModule main 
+    environment:
+      DATA_SOURCE: kafka
+      RULES_SOURCE: kafka
+      ALERT_SINK: kafka
+      RULES_EXPORT_SINK: kafka
+      LATENCY_SINK: kafka
+      KAFKA_HOST: kafka-cp-kafka-headless
+      KAFAK_POART: 9092
