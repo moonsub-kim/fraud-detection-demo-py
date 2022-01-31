@@ -7,6 +7,7 @@ from environment import Environment
 def init_consumer_properties() -> Dict[str, Any]:
     properties: Dict[str, Any] = init_properties()
     properties["auto.offset.reset"] = Environment.OFFSET
+    properties["group.id"] = Environment.GROUP_ID
     return properties
 
 

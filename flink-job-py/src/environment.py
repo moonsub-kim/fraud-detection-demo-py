@@ -16,6 +16,8 @@ class Environment():
 
     OFFSET: str = os.getenv(key="OFFSET", default="latest")
 
+    GROUP_ID: str = os.getenv(key="GROUP_ID", default="default_group")
+
     # General
     RULES_SOURCE: str = os.getenv(key="RULES_SOURCE", default="KAFKA") # SOCKET, PUB/SUB, KAFKA 선택하는옵션, 버려
 
